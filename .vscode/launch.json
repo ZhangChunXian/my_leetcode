@@ -11,6 +11,9 @@
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
+            "xdebugSettings": {
+                "max_children": 999,
+            }
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
