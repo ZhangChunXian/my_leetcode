@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 using namespace std;
 
 int main() {
@@ -9,15 +10,14 @@ int main() {
     myvector.push_back(3);
     myvector.push_back(4);
     myvector.push_back(5);
+    myvector.push_back(6);
+    myvector.push_back(7);
+    myvector.push_back(8);
 
-    vector<int>::iterator it;
+    auto res = myvector.front() > myvector.back() ? myvector.front() - myvector.back() : myvector.back() - myvector.front();
 
-    it = myvector.begin();
-    myvector.erase(it);
-
-    for (auto it = myvector.begin(); it != myvector.end(); ++it) {
-        cout << ' ' << *it;
-    }
+    cout << res;
 
     return 0;
 }
+
