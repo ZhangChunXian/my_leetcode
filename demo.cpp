@@ -1,23 +1,18 @@
+
 #include <iostream>
 #include <vector>
-#include <cstdlib>
+#include <string>
 using namespace std;
 
-int main() {
-    vector<int> myvector;
-    myvector.push_back(1);
-    myvector.push_back(2);
-    myvector.push_back(3);
-    myvector.push_back(4);
-    myvector.push_back(5);
-    myvector.push_back(6);
-    myvector.push_back(7);
-    myvector.push_back(8);
 
-    auto res = myvector.front() > myvector.back() ? myvector.front() - myvector.back() : myvector.back() - myvector.front();
+int main()
+{
+    string s("some string");
+    vector<int> v(10, 1);
 
-    cout << res;
+    for (auto it = s.cbegin(); it != s.end() && !it->empty(); ++it) {
+        cout << *it << endl;
+    }
 
     return 0;
 }
-
