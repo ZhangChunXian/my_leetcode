@@ -1,19 +1,20 @@
-#include <map>
+#include <algorithm>
 #include <iostream>
-#include <cassert>
+#include <vector>
+using namespace std;
 
-int main(int argc, char **argv) {
-    std:: map <std::string, int> m;
-    m["hello"] = 23;
+int main() {
+    vector<int> v;
 
-    // check if key is present
-    if (m.find("world") != m.end())
-        std:: cout << "map contains key world!\n";
+    // Inserting elements in vector
+    for (int i = 0; i < 8; i++) {
+        v.push_back(i + 10);
+    }
 
-    // retrieve
-    std::cout << m["hello"] << '\n';
+    reverse(v.begin() + 5, v. begin() + 8);
 
-    std::map<std::string , int>::iterator i = m.find("hello");
-    assert(i != m.end());
-    std::cout << "Key: " << i->first << "Value"
+    vector<int>::iterator it;
+
+    for (it = v.begin(); it != v.end(); it++)
+        cout << (*it) << " ";
 }

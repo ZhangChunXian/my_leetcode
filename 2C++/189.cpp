@@ -24,13 +24,18 @@ public:
 
     }// rotate
 
+/**
+ * @brief 方法二
+ * 执行用时：12 ms, 在所有 C++ 提交中击败了50.89%的用户
+ * 内存消耗：9.9 MB, 在所有 C++ 提交中击败了49.00%的用户
+ */
 
     void rotate(vector<int>& nums, int k) {
         // 三次翻转搞定
         k = k % nums.size();
         reverse(nums.begin(), nums.begin() + nums.size() - k);
-        reverse(nums.begin() + nums.size() - k, nums.end());
-        reverse(nums.begin(), nums.end());
+        reverse(nums.begin() + nums.size() - k, nums.end());   // 
+        reverse(nums.begin(), nums.end());                     // 将数组全部反转
     }
 }; // class Solution
 
