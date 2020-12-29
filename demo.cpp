@@ -1,20 +1,24 @@
-#include <algorithm>
+#include <map>
 #include <iostream>
+#include <set>
 #include <vector>
+#include <utility>
 using namespace std;
 
-int main() {
-    vector<int> v;
+int main()
+{
+    std::vector<std::pair<std::string, int>> vec;
+    std::string str;
+    int i;
+    while (std::cin >> str >> i)
+        vec.push_back(std::pair<std::string, int>(str, i));
+    // vec.push_back(std::make_pair(str, i));
+    // vec.push_back({str, i});
+    // vec.emplace_back(str, i); //!!! easiest way.
 
-    // Inserting elements in vector
-    for (int i = 0; i < 8; i++) {
-        v.push_back(i + 10);
-    }
-
-    reverse(v.begin() + 5, v. begin() + 8);
-
-    vector<int>::iterator it;
-
-    for (it = v.begin(); it != v.end(); it++)
-        cout << (*it) << " ";
+    vec.push_back(pair<string, int>(str, i));
+    vec.push_back({str, i});
+    vec.emplace_back(str, i);
+    for (const auto& p : vec)
+        std::cout << p.first << ":" << p.second << std::endl;
 }
