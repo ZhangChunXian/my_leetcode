@@ -7,9 +7,7 @@ int main() {
     vector<int> vector1 = {4, 9, 5};
     vector<int> vector2 = {9, 4 , 9, 8, 4};
 
-    // Sort the vector
-    sort(vector1.begin(), vector1.end());
-    sort(vector2.begin(), vector2.end());
+ 
 
     // Initialize a vector to shore the common values
     // and an iterator to traverse this vector
