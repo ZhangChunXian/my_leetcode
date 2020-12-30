@@ -39,3 +39,28 @@ public:
 
     }
 };
+
+/**
+ * @brief C++高赞solution
+ * 执行用时：4 ms, 在所有 C++ 提交中击败了64.52%的用户
+ * 内存消耗：9 MB, 在所有 C++ 提交中击败了25.52%的用户
+ */
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+
+        for (int i = digits.size() - 1; i >= 0; i--) {
+            ++digits[i];
+
+            if (digits[i] != 10) {      // 该位没有产生进位
+                return digits;
+            }else {
+                digits[i] = 0;          // 产生进位
+            }
+        }
+
+        digits.insert(digits.begin(), 1);    // 如果首位也产生进位, 才会执行到这条语句, 否则循环中已经return
+        return digits;
+    }
+};
