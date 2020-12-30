@@ -1,30 +1,31 @@
+#include <vector>
+#include <algorithm>
 #include <iostream>
-#include <cstdlib>
 using namespace std;
 
 int main() {
-    float *ptr, *new_ptr;
-    ptr = (float *)malloc(5 * sizeof(float));
+    vector<int> vector1 = {4, 9, 5};
+    vector<int> vector2 = {9, 4 , 9, 8, 4};
 
-    if (ptr == NULL) {
-        cout << "Memory Allocation Failed";
-        exit(1);
-    }
+    // Sort the vector
+    sort(vector1.begin(), vector1.end());
+    sort(vector2.begin(), vector2.end());
 
-    /* Initializing memory block */
-    for (int i = 0; i < 5; i++) {
-        ptr[i] = i;
-    }
-    printf("%p\n", ptr);
+    // Initialize a vector to shore the common values
+    // and an iterator to traverse this vector
+    vector<int> v(vector1.size() + vector2.size());
+    vector<int>::iterator it, st;
 
-    /**reallocating memory */
-    new_ptr = (float *) realloc(ptr, 10 * sizeof(float));
-    if (new_ptr == NULL) {
-        cout << "Memory re-allocation Failed";
-        exit(1);
-    }
+    it = set_intersection(vector1.begin(),
+                          vector1.end(),
+                          vector2.begin(),
+                          vector2.end(),
+                          v.begin());
 
-    printf("%p", new_ptr);
+    cout << "\nCommon elements:\n";
+    for (st = v.begin(); st != it; ++st)
+        cout << *st << ",";
+    cout << '\n';
 
     return 0;
 }
