@@ -1,6 +1,8 @@
 #include "cpp_header.h"
-
-
+/**
+ * @brief 坦白, 哈希表不熟, 抄题解的(逃)
+ * 
+ */
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
