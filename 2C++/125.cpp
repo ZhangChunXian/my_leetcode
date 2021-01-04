@@ -8,23 +8,22 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        for (auto character : s) {
-            character = ::toupper(character);
+        string sgood;
+        for (char ch : s) {
+            if (isalnum(ch)) {
+                sgood += tolower(ch);
+            }
         }
 
-        int begin = 0, end = s.size() - 1;
+        int n = sgood.size();
+        int left = 0, right = n - 1;
 
-        while(begin < end) {
-            while (!((s[begin] >= '0' && s[begin] <= '9') ||
-                     (s[begin] >= 'A' && s[begin] <= 'Z'))) begin++;
-            while (!((s[end] >= '0' && s[end] <= '9') ||
-                     (s[end] >= 'A' && s[end] <= 'Z'))) end--;
-
-            if (s[begin] != s[end]) return false;
-            else {
-                begin++;
-                end--;
+        while (left < right) {
+            if (sgood[left] != sgood[right]) {
+                return false;
             }
+            left++;
+            right--;
         }
 
         return true;
