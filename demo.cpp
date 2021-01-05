@@ -1,31 +1,14 @@
-// #include <iostream>
-// #include <string>
-// #include <algorithm>
-// using namespace std;
-
-// int main() {
-//     // string data = "This is a sample string.";
-
-//     // // convert string to upper case
-//     // for_each(data.begin(), data.end(), [](char &c) {
-//     //     c = ::toupper(c);
-//     // });
-
-//     // std::cout << "In Upper Case :" << data << std::endl;
-
-//     // return 0;
-
-//     string data = "boost library is simple.";
-
-//     // convert string to upper case
-    
-
-// }
-
-
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
 using namespace std;
 
-void printx2(int a)
+void find_first_not_ofDemo(string str1, string str2) {
+    string::size_type ch = str1.find_first_not_of(str2);
+    cout << "First unmatched character :";
+    cout << str1[ch];
+}
+
+// Driver code
+int main() {
+    _int128 
+}
