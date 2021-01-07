@@ -51,3 +51,24 @@ public:
         }
     }
 };
+
+/**
+ * @brief leetcode高赞题解, 递归方法
+ * 执行用时：12 ms, 在所有 C++ 提交中击败了76.85%的用户
+ * 内存消耗：14.9 MB, 在所有 C++ 提交中击败了51.85%的用户
+ */
+class Solution {
+public:
+    ListNode * mergeTwoLists(ListNode *l1, ListNode *l2) {
+        if (l1 == NULL) {
+            return l2;
+        }else if (l2 == NULL) {
+            return l1;
+        }else if (l1->val <= l2->val) {
+            l1->next = mergeTwoLists(l1->next, l2);
+            return l1;
+        }
+        l2->next = mergeTwoLists(l1, l2->next);
+        return l2;
+    }
+};
