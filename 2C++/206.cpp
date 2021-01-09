@@ -68,3 +68,13 @@ public:
         return head;
     }
 };
+
+/**
+ * @brief 利用递归方法的高赞题解
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+    }
+};
