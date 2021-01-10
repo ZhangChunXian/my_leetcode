@@ -10,4 +10,5 @@
 #include <utility>
 #include <functional>
 #include <bitset>
+#include <stack>
 using namespace std;

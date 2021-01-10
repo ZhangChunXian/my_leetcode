@@ -40,3 +40,25 @@ public:
         return true;
     }
 };
+
+/**
+ * 高赞题解, 利用C++ STL中的stack数据结构(现有的轮子)做的
+ * 执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户
+ * 内存消耗：6.5 MB, 在所有 C++ 提交中击败了53.25%的用户
+ */
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> temp;
+
+        for (char c : s) {
+            if (c == '[') temp.push(']');
+            else if (c == '(') temp.push(')');
+            else if (c == '{') temp.push('{');
+            else if (temp.empty() || c != temp.top()) {
+                return false;
+            }else if (c == temp.top()) temp.pop();
+        }
+        return temp.empty();
+    }
+};

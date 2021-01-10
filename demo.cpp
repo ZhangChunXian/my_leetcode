@@ -1,14 +1,35 @@
-#include <bitset>
+#include <vector>
 #include <iostream>
+#include <stack>
 using namespace std;
 
-#define M 32
+void showstack(stack <int> s) {
+    while (!s.empty()) {
+        cout << '\t' << s.top();
+        s.pop();
+    }
+    cout << '\n';
+}
 
 int main() {
-    int num = 0;
-    cin >> num;
+    stack<int> s;
+    s.push(10);
+    s.push(30);
+    s.push(20);
+    s.push(5);
+    s.push(1);
 
-    num =(int)((double)num/2 + 0.5);
+    cout << "The stack is :";
+    showstack(s);
 
-    cout << num << endl;
+    cout << "\ns.size() : " << s.size();
+    cout << "\ns.top() : " << s.top();
+
+    cout << "\ns.pop() : ";
+    s.pop();
+    showstack(s);
+
+    return 0;
+
+
 }
