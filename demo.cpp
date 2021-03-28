@@ -1,35 +1,10 @@
-#include <vector>
-#include <iostream>
-#include <stack>
-using namespace std;
-
-void showstack(stack <int> s) {
-    while (!s.empty()) {
-        cout << '\t' << s.top();
-        s.pop();
-    }
-    cout << '\n';
-}
+#include "cpp_header.h"
 
 int main() {
-    stack<int> s;
-    s.push(10);
-    s.push(30);
-    s.push(20);
-    s.push(5);
-    s.push(1);
-
-    cout << "The stack is :";
-    showstack(s);
-
-    cout << "\ns.size() : " << s.size();
-    cout << "\ns.top() : " << s.top();
-
-    cout << "\ns.pop() : ";
-    s.pop();
-    showstack(s);
-
+    int sum = 0, value = 0;
+    while (cin >> value) {
+        sum += value;
+    }
+    std::cout << "Sum is: " << sum << std::endl;
     return 0;
-
-
 }

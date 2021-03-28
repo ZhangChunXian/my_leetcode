@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "myvector"
+        "myvector",
+        "stoi"
     ],
     "files.associations": {
         "vector": "cpp",
