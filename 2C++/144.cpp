@@ -10,6 +10,7 @@ struct TreeNode {
 };
 
 /* 学习再构造一个函数完成需求 */
+// 递归版本
 class Solution {
 public:
     void preorder(TreeNode *root, vector<int> &res) {
@@ -25,6 +26,31 @@ public:
         vector<int> res;
 
         preorder(root, res);
+        return res;
+    }
+};
+
+// 非递归版本, 用一个栈来辅助
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> res;
+        if (root == nullptr) {
+            return res;
+        }
+
+        stack<TreeNode*> stk;
+        TreeNode* node = root;
+        while (!stk.empty() || node != nullptr) {
+            while (node != nullptr) {
+                res.emplace_back(node->val);
+                stk.emplace(node);
+                node = node->left;
+            }
+            node = stk.top();
+            stk.pop();
+            node = node->right;
+        }
         return res;
     }
 };
