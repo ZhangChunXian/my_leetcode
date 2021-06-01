@@ -26,20 +26,30 @@ public:
         if (!root) {
             return ret;
         }
+
+        // 初始化一个辅助队列
         queue<TreeNode*> q;
+
+        // 根节点入队
         q.push(root);
-        while (!q.empty()) {
+
+        // 若队列非空, 则对头结点出队, 访问该结点, 并将其左右孩子插入队尾(如果有的话)
+        while (!q.empty()) {        // 若队列非空
             int currentLevelSize = q.size();
             vector<int> temp;
-            for (int i = 1; i <= currentLevelSize; ++i) {
+
+            for (int i = 1; i <= currentLevelSize; i++) {
                 auto node = q.front();
-                temp.push_back(node->val);
-                q.pop();
-                if (node->left) q.push(node->left);
-                if (node->right) q.push(node->right);
+                q.pop();           // 对头结点出队
+                temp.push_back(node->val); // 访问该结点
+
+                // 并将其左右孩子插入队尾(如果有的话)
+                if (node->left )  q.push(node->left);
+                if (node->right)  q.push(node->right);
             }
             ret.push_back(temp);
         }
+
         return ret;
     }
 };
