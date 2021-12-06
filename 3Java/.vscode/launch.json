@@ -6,27 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Demo",
+            "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "Demo",
-            "projectName": "java_configuration_bb628374"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Hello",
+            "name": "Launch HelloWorld",
             "request": "launch",
-            "mainClass": "Hello",
-            "projectName": "java_configuration_bb628374"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "Main",
-            "args": ""
+            "mainClass": "leetcode.src.cn.leetcode.HelloWorld",
+            "projectName": "3Java_b8ce279b"
         }
     ]
 }
