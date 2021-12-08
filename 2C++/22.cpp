@@ -30,3 +30,32 @@ public:
       }
     }
 };
+
+/**
+ * @brief 动态规划方法
+ *!! 未通过
+ */
+
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+      if(n == 0) {
+        return vector<string>{""};
+      }
+      vector<vector<string>> total(n, vector<string>{});   // total[i]表示i对括号时的所有情况
+      total[0].push_back("");
+      total[1].push_back("()");
+      for(int i = 2; i <= n; i++) {
+        for(int j = 0; j <= i - 1; j++) {
+          vector<string> now_list1 = total[j];
+          vector<string> now_list2 = total[i - 1 - j];
+          for(int k = 0; k < now_list1.size(); k++) {
+            for(int l = 0; l < now_list2.size(); l++) {
+              total[i].push_back("(" + now_list1[k] + ")" + now_list2[l]);
+            }
+          }
+        }
+      }
+      return total[n];
+    }
+};
