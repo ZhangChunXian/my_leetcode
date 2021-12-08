@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "*.html": "html",
+        "vector": "cpp",
+        "xstring": "cpp"
     }
 }
