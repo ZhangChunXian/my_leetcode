@@ -33,6 +33,7 @@ public:
     }
 };
 
+
 int main() {
     Solution solution;
     vector<string> tokens = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
@@ -40,3 +41,54 @@ int main() {
     cout << res << endl;
     return 0;
 }
+
+
+/**
+ * @brief 直接写的, 虽然复杂度不够好
+ * 执行用时：16 ms, 在所有 C++ 提交中击败了11.67%的用户
+ * 内存消耗：12.5 MB, 在所有 C++ 提交中击败了5.11%的用户
+ */
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens)
+    {
+        if (tokens.size() == 1) return stoi(tokens[0]);
+        stack<string> numbers;
+        numbers.push(tokens[0]);
+
+        int index = 1;
+        while(index < tokens.size())
+        {
+            if(tokens[index] == "-") {
+                int rightSide = stoi(numbers.top());
+                numbers.pop();
+                int leftSide = stoi(numbers.top());
+                numbers.pop();
+                numbers.push(to_string(leftSide - rightSide));
+            } else if(tokens[index] == "+") {
+                int rightSide = stoi(numbers.top());
+                numbers.pop();
+                int leftSide = stoi(numbers.top());
+                numbers.pop();
+                numbers.push(to_string(leftSide + rightSide));
+            } else if(tokens[index] == "/") {
+                int rightSide = stoi(numbers.top());
+                numbers.pop();
+                int leftSide = stoi(numbers.top());
+                numbers.pop();
+                numbers.push(to_string(leftSide / rightSide));
+            } else if(tokens[index] == "*") {
+                int rightSide = stoi(numbers.top());
+                numbers.pop();
+                int leftSide = stoi(numbers.top());
+                numbers.pop();
+                numbers.push(to_string(leftSide * rightSide));
+            } else {
+                numbers.push(tokens[index]);
+            }
+            index++;
+        }
+
+        return stoi(numbers.top());
+    }
+};
