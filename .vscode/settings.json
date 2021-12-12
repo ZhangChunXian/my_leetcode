@@ -2,6 +2,7 @@
     "files.associations": {
         "*.html": "html",
         "vector": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "algorithm": "cpp"
     }
 }
