@@ -3,6 +3,7 @@
         "*.html": "html",
         "vector": "cpp",
         "xstring": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "stack": "cpp"
     }
 }
